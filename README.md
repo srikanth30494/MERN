@@ -7,8 +7,9 @@ The Swift consumption tool was designed with Modern data and development technol
 Make sure your nodeJS version is >= 4.2.1 and npm version is >=3.0.0.
 
 ## Configs:
-sst-app-client can be build locally for both Development and Production Environments.
-All the environment variables are set in Webpack to build it in both local and production environments.
+All the environment variables and configs are set in Webpack to build the App in both local and production environments.
+For Development version uses `webpack.common.dev.js & webpack.dev.js` and 
+For production version `webpack.common.aot.js & webpack.prod.js`
 
 ## Setting up project locally:
 In order to `Run` the project locally in development mode, you need access to two repositories.
@@ -49,13 +50,44 @@ $ npm start
  
  http://localhost:3000
  
-** To be able to run project locally, you need to have valid UMG Global credentials **
+**To be able to run project locally, you need to have valid UMG Global credentials**
 
-*** To run the project locally in production environment:
+## Production Environment:
 
-The project uses Angular AOT Compilation for the production purpose where as in development it uses JIT Compilation.
-AOT Compilation was set up in the webpack using the package [ngc-webpack](https://github.com/shlomiassaf/ngc-webpack).
+This project uses Angular AOT Compilation for the production purpose where as in development it uses JIT Compilation.
+AOT Compilation was set up using the package [ngc-webpack](https://github.com/shlomiassaf/ngc-webpack).
 
+Use the following command to build the Application for production environment
 
+```
+npm run build:prod
+```
+Once the App was build successfully, you should be able to find `dist` folder with the necessary production files.
 
+To run the production files locally, make sure you install [http-server](https://github.com/indexzero/http-server) globally or any other you prefer similar to [http-server](https://github.com/indexzero/http-server)
 
+cd into the `dist` folder and run the following command
+```
+http-server -p 8080 -g -o
+```
+where `-p 8080` is the port http-server runs on, `-g` serves the `.gzip` files from the dist folder instead to `.min.js` files and `-o` Opens browser window after starting the server.
+
+## Docker Build:
+
+Docker uses the command `npm run build` while building the images in the containers.
+
+If you are building a development version, the `build` command in `Package.json` should be set to `npm run build:dev` and for the production version it should be set to `npm run build:prod`.
+
+Please make these changes to `Package.json` accordingly until they are set in the Docker file.
+
+## Running Lint:
+Use the following command to run lint check before you PR. It's must that you do lint check to avoid errors during the PR process.
+```
+npm run lint
+```
+
+## Application URL's
+**For Development:** 
+https://swift-dev.umusic.com/
+**For QA:** 
+https://swift-qa.umusic.com/
