@@ -8,15 +8,14 @@ Make sure your nodeJS version is >= 4.2.1 and npm version is >=3.0.0.
 
 ## Configs:
 All the environment variables and configs are set in Webpack to build the App in both local and production environments.
-For Development version uses `webpack.common.dev.js & webpack.dev.js` and 
-For production version `webpack.common.aot.js & webpack.prod.js`
+For Development version uses `webpack.common.dev.js & webpack.dev.js` and for production version `webpack.common.aot.js & webpack.prod.js` from the config folder.
 
 ## Setting up project locally:
 In order to `Run` the project locally in development mode, you need access to two repositories.
 1. sst-app-api (API)
 2. sst-app-client (Client)
 
-### For sst-app-api
+### For sst-app-api:
 
 In order to run the repo locally do the following:
 
@@ -34,7 +33,7 @@ Once the API was build, It starts to listen on port 5777.
 
 For local the Graphql API end point is http://localhost:5777/graphql
 
-### For sst-app-client
+### For sst-app-client:
 
 Just clone this repo or download the zip file.
 ```
@@ -50,7 +49,7 @@ $ npm start
  
  http://localhost:3000
  
-**To be able to run project locally, you need to have valid UMG Global credentials**
+**Note: To be able to run project locally, you need to have valid UMG Global credentials**
 
 ## Production Environment:
 
@@ -70,7 +69,7 @@ cd into the `dist` folder and run the following command
 ```
 http-server -p 8080 -g -o
 ```
-where `-p 8080` is the port http-server runs on, `-g` serves the `.gzip` files from the dist folder instead to `.min.js` files and `-o` Opens browser window after starting the server.
+where `-p 8080` is the port http-server runs on, `-g` serves the `.gzip` files from the dist folder instead of `.min.js` files and `-o` Opens browser window after starting the server.
 
 ## Docker Build:
 
@@ -80,14 +79,24 @@ If you are building a development version, the `build` command in `Package.json`
 
 Please make these changes to `Package.json` accordingly until they are set in the Docker file.
 
+## Tech Stack
+Primarily built on **Angular2**  
+CSS Pre processors: Sass  
+CSS Frame work: Bootstrap  
+API: Graphql with [Apollo-client] (http://dev.apollodata.com/angular2/) for Angular.  
+
+
 ## Running Lint:
 Use the following command to run lint check before you PR. It's must that you do lint check to avoid errors during the PR process.
 ```
 npm run lint
 ```
+## Bugs and Issues:
+Project team uses `Github project` feature to track the issues and bugs, you can find them at the below URL.  
+https://github.com/orgs/umg/projects/3
 
 ## Application URL's
-**For Development:** 
-https://swift-dev.umusic.com/
-**For QA:** 
+**For Development:**   
+https://swift-dev.umusic.com/  
+**For QA:**   
 https://swift-qa.umusic.com/
