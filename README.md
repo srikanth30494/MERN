@@ -83,11 +83,11 @@ Please make these changes to `Package.json` accordingly until they are set in th
 Primarily built on **Angular2**  
 CSS Pre processors: Sass  
 CSS Frame work: Bootstrap  
-API: Graphql with [Apollo-client] (http://dev.apollodata.com/angular2/) for Angular.  
+API: Graphql with [Apollo-client](http://dev.apollodata.com/angular2/) for Angular.  
 
 
 ## Running Lint:
-Use the following command to run lint check before you PR. It's must that you do lint check to avoid errors during the PR process.
+Use the following command to run lint check before you PR. It's must that you perform lint check to avoid errors during the PR process.
 ```
 npm run lint
 ```
@@ -98,5 +98,5 @@ https://github.com/orgs/umg/projects/3
 ## Application URL's
 **For Development:**   
 https://swift-dev.umusic.com/  
-**For QA:**   
+**For QA:(Prod)**   
 https://swift-qa.umusic.com/
