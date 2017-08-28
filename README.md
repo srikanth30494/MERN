@@ -6,14 +6,14 @@ The Swift consumption tool was designed with Modern data and development technol
 ## Requirements:
 Make sure your nodeJS version is >= 4.2.1 and npm version is >=3.0.0.
 
-## Configs
+## Configs:
 sst-app-client can be build locally for both Development and Production Environments.
 All the environment variables are set in Webpack to build it in both local and production environments.
 
 ## Setting up project locally:
 In order to `Run` the project locally in development mode, you need access to two repositories.
-1. sst-app-client (Client)
-2. sst-app-api (API)
+1. sst-app-api (API)
+2. sst-app-client (Client)
 
 ### For sst-app-api
 
@@ -42,13 +42,20 @@ $ git clone git@github.com:umg/sst-app-client.git
 cd into the directory and run
 ```
 $ npm install
+$ npm start
 ```
-To start the client
-```
-$npm start
-```
+ Once everything was setup correctly 
  Navigate to the following URL to verify that your application is running.
  
  http://localhost:3000
  
+** To be able to run project locally, you need to have valid UMG Global credentials **
+
+*** To run the project locally in production environment:
+
+The project uses Angular AOT Compilation for the production purpose where as in development it uses JIT Compilation.
+AOT Compilation was set up in the webpack using the package [ngc-webpack](https://github.com/shlomiassaf/ngc-webpack).
+
+
+
 
