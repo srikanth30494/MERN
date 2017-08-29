@@ -44,8 +44,7 @@ cd into the directory and run
 $ npm install
 $ npm start
 ```
- Once everything was setup correctly 
- Navigate to the following URL to verify that your application is running.
+ Once everything was setup correctly, navigate to the following URL to verify that your application is running.
  
  http://localhost:3000
  
@@ -81,10 +80,14 @@ Please make these changes to `Package.json` accordingly until they are set in th
 
 ## Tech Stack
 Primarily built on **Angular2**  
+TypeScript@2.0.10  
 CSS Pre processors: Sass  
 CSS Frame work: Bootstrap  
 API: Graphql with [Apollo-client](http://dev.apollodata.com/angular2/) for Angular.  
 
+## Other
+- To prevent Angular compiler errors, project uses strict versions of `"apollo-client@1.0.1"` and `"graphql-tag@1.3.1"`, higher versions may lead to compiler errors when building the production version.
+- `ng2-completer` should be atleast `1.6.1` or above.
 
 ## Running Lint:
 Use the following command to run lint check before you PR. It's must that you perform lint check to avoid errors during the PR process.
